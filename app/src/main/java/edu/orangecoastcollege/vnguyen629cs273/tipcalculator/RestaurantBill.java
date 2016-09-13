@@ -11,56 +11,47 @@ public class RestaurantBill {
     private double mTipAmount;
     private double mTotalAmount;
 
-    public RestaurantBill()
-    {
+    public RestaurantBill() {
         mAmount = 0.00;
         mTipPercent = 0.00;
         mTipAmount = 0.00;
         mTotalAmount = 0.00;
     }
 
-    public RestaurantBill(double mAmount, double mTipPercent)
-    {
+    public RestaurantBill(double mAmount, double mTipPercent) {
         this.mAmount = mAmount;
         this.mTipPercent = mTipPercent;
         recalculateAmount();
     }
 
-    public double getAmount()
-    {
+    public double getAmount() {
         return mAmount;
     }
 
-    public double getTipPercent()
-    {
+    public double getTipPercent() {
         return mTipPercent;
     }
 
-    public double getTipAmount()
-    {
+    public double getTipAmount() {
         return mTipAmount;
     }
 
-    public double getTotalAmount()
-    {
+    public double getTotalAmount() {
         return mTotalAmount;
     }
 
-    public void setAmount(double newAmount)
-    {
+    public void setAmount(double newAmount) {
         mAmount = newAmount;
         recalculateAmount();
     }
 
-    public void setTipPercent(double newTipPercent)
-    {
+    public void setTipPercent(double newTipPercent) {
         mTipPercent = newTipPercent;
         recalculateAmount();
     }
 
-    private void recalculateAmount()
-    {
+    private void recalculateAmount() {
         mTipAmount = mAmount * mTipPercent;
-        mTotalAmount += mTipAmount;
+        mTotalAmount = mAmount + mTipAmount;
     }
 }
