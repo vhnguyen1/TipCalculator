@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     amount = 0.00;
+                    currentBill.setAmount(amount);
                 }
             }
             catch (NumberFormatException err) {
